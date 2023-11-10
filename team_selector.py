@@ -38,6 +38,8 @@ while True:
   else:
     for i in range(0, 20, 2):
       print(players[i] + ' vs ' + players[i+1])
+      start = random.randrange(i, i+2)
+      print(players[start] + ' starts.')
     
   response = input('\nPick teams again? (Type y or n): ')
   if response == 'n':
