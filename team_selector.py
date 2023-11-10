@@ -8,12 +8,16 @@ players = ['Martin', 'Craig', 'Sue',
            'Ada', 'Grace', 'Jean',
            'Marissa', 'Alan']
 
-print('Welcome to the team allocation tool!')
+print('Welcome to the team/player allocation tool!')
 
 while True:
 
-    random.shuffle(players)
+  random.shuffle(players)
 
+  typeofsport = input('\nIs it a team or individual sport? \
+                        \nType t for team or i for individual: ')
+    
+  if typeofsport == 't':
     # Form 1st Team
     team1 = players[:len(players)//2]
 
@@ -21,7 +25,7 @@ while True:
 
     print('Team 1:')
     for player in team1:
-        print(player)
+      print(player)
 
     # Form 2nd Team
     team2 = players[len(players)//2:]
@@ -30,8 +34,11 @@ while True:
 
     print('Team 2:')
     for player in team2:
-        print(player)
-
-    response = input('\nPick teams again? (Type y or n): ')
-    if response == 'n':
-      break
+      print(player)
+  else:
+    for i in range(0, 20, 2):
+      print(players[i] + ' vs ' + players[i+1])
+    
+  response = input('\nPick teams again? (Type y or n): ')
+  if response == 'n':
+    break
