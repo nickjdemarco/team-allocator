@@ -16,7 +16,8 @@ while True:
 
   typeofsport = input('\nIs it a team or individual sport? \
                         \nType t for team or i for individual: ')
-    
+
+  # Team Sport  
   if typeofsport == 't':
     # Form 1st Team
     team1 = players[:len(players)//2]
@@ -35,9 +36,12 @@ while True:
     print('Team 2:')
     for player in team2:
       print(player)
+  # Invividual Sport
   else:
+    # Go through the list of players, incrementing by 2 each time
     for i in range(0, 20, 2):
       print(players[i] + ' vs ' + players[i+1])
+      # Pick a random player from this set of two players
       start = random.randrange(i, i+2)
       print(players[start] + ' starts.')
     
